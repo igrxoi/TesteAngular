@@ -1,0 +1,108 @@
+<div class="container">
+	<div class="menu">
+		<app-menu></app-menu>
+	</div>
+	<div class="wrapper">
+		<section class="navbar">
+			<app-navbar></app-navbar>
+		</section>
+		<section class="content">
+			<section class="progress">
+				<ul>
+					<li>
+						<fa-icon class="icons" [ngClass]="{'step-selected': step >= 1}" [icon]="faCoffee"></fa-icon>
+						<p>Início</p>
+					</li>
+					<li>
+						<fa-icon class="icons" [ngClass]="{'step-selected': step >= 2}" [icon]="faCoffee"></fa-icon>
+						<p>Documentos</p>
+					</li>
+					<li>
+						<fa-icon class="icons" [ngClass]="{'step-selected': step >= 3}" [icon]="faCoffee"></fa-icon>
+						<p>Dados Cadastrais</p>
+					</li>
+					<li>
+						<fa-icon class="icons" [ngClass]="{'step-selected': step >= 4}" [icon]="faCoffee"></fa-icon>
+						<p>Admissão</p>
+					</li>
+				</ul>
+			</section>
+      <main class="contet-step">
+        <span>Informe o CPF do futuro cooperador (a)</span>
+        <p>
+          Se necessário, você podera duplicar uma conta existenteu pausar e retomar este cadastro futuramente.<br>
+          Digite apenas números (sem pontos ou traços).
+        </p>
+        <div class="information">
+          <div class="wrapper-inputs">
+            <label for="document">CPF</label>
+            <input [ngClass]="{'input-invalid': erroDocument}" [(ngModel)]="document" [brmasker]="{mask: '000.000.000-00', type:'num'}" maxlength="14" type="text" id="document" placeholder="000.000.000-00">
+            <span *ngIf="erroDocument"> {{ messageError }} </span>
+          </div>
+          <button [ngClass]="{'cpf-invalid': erroDocument}" (click)="searchCPF()" class="button-dark">
+            <span *ngIf="!loading">Consultar por CPF</span>
+            <img *ngIf="loading" src="assets/loading.gif" alt="">
+          </button>
+        </div>
+        <div class="cards" *ngIf="data">
+          <div class="card">
+            <b>Situação cadastral do CPF</b>
+            <span>Consulta na Receita Federal</span>
+            <div class="informations">
+              <div class="icon">
+                <fa-icon class="icons" [icon]="faUser"></fa-icon>
+              </div>
+              <div class="personal-information">
+                <span>Nome:</span>
+                <span class="data">{{ person.name }}</span>
+              </div>
+            </div>
+            <div class="document">
+              <div class="icon">
+                <fa-icon class="icons" [icon]="faCheck"></fa-icon>
+              </div>
+              <div class="personal-information">
+                <span>Situação do CPF</span>
+                <span class="data">Regular</span>
+              </div>
+            </div>
+          </div>
+          <div class="card" *ngIf="person?.applicationAccount">
+            <b>Conta aplicação</b>
+            <span>Cooperativa Viacredi</span>
+            <div class="informations">
+              <div class="icon">
+                <fa-icon class="icons" [icon]="faCreditCard"></fa-icon>
+              </div>
+              <div class="personal-information">
+                <span>Número da conta:</span>
+                <span class="data">{{ person.applicationAccount.number }}</span>
+              </div>
+            </div>
+            <br>
+            <a href="">Duplicar conta</a>
+          </div>
+          <div class="card" *ngIf="person?.checkingAccount">
+            <b>Conta corrente</b>
+            <span>Cooperativa Viacredi</span>
+            <div class="informations">
+              <div class="icon">
+                <fa-icon class="icons" [icon]="faCreditCard"></fa-icon>
+              </div>
+              <div class="personal-information">
+                <span>Número da conta:</span>
+                <span class="data">{{ person.checkingAccount.number }}</span>
+              </div>
+            </div>
+            <br>
+            <a href="">Duplicar conta</a>
+          </div>
+        </div>
+      </main>
+			<section class="footer">
+        <app-footer [showNewAdmission]="data"></app-footer>
+      </section>
+		</section>
+	</div>
+</div>
+

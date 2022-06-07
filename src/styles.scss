@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "Exo2-Black";
+  src: url("assets/fonts/exo2/Exo2-Black.ttf");
+}
+
+@font-face {
+  font-family: "Exo2-Regular";
+  src: url("assets/fonts/exo2/Exo2-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url("assets/fonts/opensans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans-Medium";
+  src: url("assets/fonts/opensans/OpenSans-Medium.ttf");
+}
+
+.button-white {
+  border: 1px solid #165C7D;
+  padding: 0 16px;
+  height: 40px;
+  background-color: #fff;
+  color: #165C7D;
+  font-size: 16px;
+}
+
+.button-dark {
+  border: 1px solid #165C7D;
+  padding: 0 24px;
+  color: #fff;
+  background: #165C7D;
+  font-size: 16px;
+}
