@@ -67,7 +67,7 @@
               .icons {
 
                 &::after {
-                  width: 100px !important;
+                  width: 100px;
                 }
 
               }
@@ -286,4 +286,126 @@
 
   }
 
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .container {
+
+    .menu {
+      display: none;
+    }
+
+    .wrapper {
+      width: 100%;
+    }
+
+    .content {
+
+      .progress {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        ul {
+          padding: 0 0 0 0 !important;
+  
+          li {
+      
+            width: 80px !important;
+            box-sizing: border-box;
+    
+            &:first-child {
+  
+              .icons {
+  
+                &::after {
+                  width: 60px !important;
+                  left: 40px !important;
+                }
+  
+              }
+                
+            }
+    
+            &:last-child {
+  
+              .icons {
+  
+                &::after {
+                  width: 35px !important;
+                }
+  
+              }
+                
+            }
+    
+            .icons {
+  
+              &::after {
+                width: 80px !important;
+                bottom: 36px !important;
+              }
+  
+            }
+
+  
+            p {
+              font-size: 8px !important;
+            }
+    
+          }
+        }
+    
+      }
+
+      .contet-step {
+
+        .title {
+          display: block;
+          font-size: 18px !important;
+          height: 5%;
+        }
+
+        .subtitle {
+          height: 10%;
+        }
+
+        .information {
+          height: 10%;
+
+          .button-dark {
+
+            span {
+              font-size: 12px !important;
+            }
+
+          }
+
+          .cpf-invalid {
+            margin-bottom: 0 !important;
+          }
+
+        }
+
+        .cards {
+          height: 70%;
+          flex-wrap: wrap;
+          overflow: hidden auto;
+
+          .card {
+            margin-bottom: 3%;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+	
+	
 }

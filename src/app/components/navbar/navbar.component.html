@@ -1,13 +1,57 @@
-<div class="navbar">
+<div class="navbar" *ngIf="!showMenu">
 	<div class="header">
+		<fa-icon class="icon" [icon]="faBars" (click)="openMenu()"></fa-icon>
 		<div class="title">
 			<h6>Nova admissão cooperado</h6>
 			<span>Cadastro / Admissão do Cooperado / Nova Admimissão do Cooperado</span>
 		</div>
 		<div class="actions">
-      <fa-icon class="icon" [icon]="faBell"></fa-icon>
-			<button class="button-white">Viacredi</button>
-      <img class="picture" src="assets/homem.jpeg" alt="">
+			<fa-icon class="icon" [icon]="faBell"></fa-icon>
+				<button class="button-white">Viacredi</button>
+			<img class="picture" src="assets/homem.jpeg" alt="">
 		</div>
+	</div>
+</div>
+
+<div class="menu" [ngClass]="{'show-menu': showMenu}">
+	<div class="logo">
+		<img src="assets/logo.png" alt="">
+		<div class="actions">
+			<button class="button-white">Viacredi</button>
+			<img class="picture" src="assets/homem.jpeg" alt="">
+		</div>
+		<fa-icon class="icon" [icon]="faXmark" (click)="openMenu()"></fa-icon>
+	</div>
+	<div class="navigation">
+		<div class="icons"> 
+			<fa-icon class="icon" [icon]="faBell"></fa-icon>
+		  	<span>Notificações</span>
+	  	</div>
+		<hr>
+		<div class="icons"> 
+      		<fa-icon class="icons" [icon]="faSearch"></fa-icon>
+			<span>Buscar</span>
+		</div>
+		<hr>
+		<div class="icons">
+      		<fa-icon class="icons" [icon]="faStar"></fa-icon>
+			<span>Favoritos</span>
+		</div>
+		<hr>
+		<div class="icons">
+      		<fa-icon class="icons" [icon]="faCommentAlt"></fa-icon>
+			<span>Chat</span>
+		</div>
+		<hr>
+		<div class="icons">
+      		<fa-icon class="icons" [icon]="faClipboard"></fa-icon>
+			<span>Board</span>
+		</div>
+		<hr>
+		<div class="icons">
+      		<fa-icon class="icons" [icon]="faHouse"></fa-icon>
+			<span>Sobre a Instituição</span>
+		</div>
+		<hr>
 	</div>
 </div>
